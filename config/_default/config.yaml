@@ -1,0 +1,85 @@
+# Configuration of Hugo
+# Guide: https://wowchemy.com/docs/getting-started/
+# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+
+title: Functional Optical Imaging Laboratory # Website name
+baseurl: 'https://foil.bme.utexas.edu/' # Website URL
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: en
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+############################
+## MODULES
+############################
+
+module:
+  imports:
+    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy/v5
+      
+############################
+## PAGE OPTIONS
+############################
+
+cascade:
+
+   # Disable share menu on all pages
+  - share: false
+
+  # Disable date on all project pages
+  - _target:
+      path: /project/**
+    show_date: false
+
+  # Show related on all publication pages
+  - _target:
+      path: /publication/**
+    show_related: true
+
+############################
+## ADVANCED
+############################
+
+enableGitInfo: true
+summaryLength: 30
+paginate: 10
+enableEmoji: true
+enableRobotsTXT: true
+footnotereturnlinkcontents: <sup>^</sup>
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+permalinks:
+  authors: '/author/:slug/'
+  tags: '/tag/:slug/'
+  publication_types: '/publication-type/:slug/'
+disableAliases: false
+outputs:
+  home: [HTML, RSS, JSON, WebAppManifest]
+  section: [HTML, RSS]
+imaging:
+  resampleFilter: lanczos
+  quality: 90
+  anchor: smart
+timeout: 600000
+taxonomies:
+  tag: tags
+  publication_type: publication_types
+  author: authors
+markup:
+  _merge: deep
+related:
+  threshold: 80
+  includeNewer: true
+  toLower: true
+  indices:
+    - name: tags
+      weight: 100
+security:
+  _merge: deep
+sitemap:
+  _merge: deep

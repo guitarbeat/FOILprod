@@ -1,0 +1,33 @@
+# Theme metadata
+name = "foil"
+
+[light]
+  # Primary
+  primary = "#BF5700"
+
+  # Menu
+  menu_primary = "#FFFFFF"
+  menu_text = "#2B2B2B"
+  menu_text_active = "#BF5700"
+  menu_title = "#2B2B2B"
+
+  # Home sections
+  home_section_odd = "#FFFFFF"
+  home_section_even = "#F7F7F7"
+
+[dark]
+  # Primary
+  primary = "#333F48"
+
+  # Links
+  link = "#9CADB7"
+  link_hover = "#9CADB7"
+
+  # Menu
+  menu_text = "#9CADB7"
+  menu_text_active = "#9CADB7"
+  menu_title = "#9CADB7"
+
+  # Home sections
+  home_section_odd = "#23252F"
+  home_section_even = "#272935"
