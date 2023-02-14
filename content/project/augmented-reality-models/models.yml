@@ -1,0 +1,26 @@
+- src: "blood-v1.glb"
+  iosSrc: "blood-d1.usdz"
+  poster: "poster.webp"
+  title: "Mouse Vasculature"
+  author: "Bret W5"
+
+- src: "blood-v2.glb"
+  iosSrc: "blood-d2.usdz"
+  poster: "poster2.webp"
+  title: "New Model"
+  author: "Eddy W3"
+
+- src: "blood-v3_uncompressed.glb"
+  poster: "blood-v3.webp"
+  title: "Experiment"
+  author: "Matlab Exported Uncompressed"
+
+- src: "blood-v3.glb"
+  poster: "blood-v3.webp"
+  title: "Experiment"
+  author: "Matlab Exported Compressed"
+
+- src: "blood-v4.glb"
+  poster: "blood-v3.webp"
+  title: "Python Exported"
+  author: "Python Exported Noncompressed"
