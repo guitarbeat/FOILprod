@@ -35,10 +35,11 @@
       auto-rotate
     ></model-viewer>
   </div>
-  <div class="card-content">
-    <div class="content">
-      <h4>{{ .Get "title" }}</h4>
-      <p>{{ .Get "description" }}</p>
-    </div>
-  </div>
 </div>
+
+{{ $caption := .Get "caption" | default (.Get "title") | default "" }}{{/* Support legacy `title` option. */}}
+{{- if $caption -}}
+<figcaption class="model-viewer"> 
+  {{ $caption | markdownify | emojify }}
+</figcaption>
+{{- end -}}
