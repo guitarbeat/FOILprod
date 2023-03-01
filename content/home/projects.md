@@ -32,6 +32,8 @@ content:
     tag: LSCI
   - name: Multiphoton Microscopy
     tag: Multiphoton Microscopy
+  # - name: Computational Modeling
+  #     tag: Computational Modeling
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.

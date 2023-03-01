@@ -6,6 +6,7 @@ summary: We developed an automated vectorization method to extract blood vessel 
 tags:
 - Vectorization
 - Multiphoton Microscopy
+- Computational Modeling
 
 weight: 5
 

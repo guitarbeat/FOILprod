@@ -1,13 +1,21 @@
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.0/model-viewer.min.js"></script>
 
 <style>
+    .card-container {
+        position: relative;
+        width: 100%;  
+        max-width: 300px; 
+        margin: 0 auto;
+        display: inline-block;
+    }
     .card {
         width: 100%;  
-        max-width: 400px; 
+        max-width: 300px; 
         margin: 0 auto;
+        display: inline-block;
     }
     .card-image {
-        height: 400px;
+        height: 300px;
         width: 100%;
         /* background-color: #eee; */
     }
@@ -15,31 +23,38 @@
         width: 100%;
         height: 100%;
     }
+    .model-viewer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
 </style>
 
-<div class="card">
-  <div class="card-image" style="display: flex; justify-content: center; align-items: center;">
-    <model-viewer
-      alt="{{ .Get "alt" }}"
-      src="{{ .Get "src" }}"
-      ios-src="{{ .Get "iosSrc" }}"
-      ar
-      ar-modes="scene-viewer webxr quick-look"
-      ar-scale="auto"
-      environment-image="{{ .Get "environment-image" }}"
-      poster="{{ .Get "poster" }}"
-      shadow-intensity="{{ .Get "shadow-intensity" }}"
-      camera-controls
-      touch-action="{{ .Get "touch-action" }}"
-      generate-schema
-      auto-rotate
-    ></model-viewer>
+<div class="card-container">
+  <div class="card">
+    <div class="card-image" style="display: flex; justify-content: center; align-items: center;">
+      <model-viewer
+        alt="{{ .Get "alt" }}"
+        src="{{ .Get "src" }}"
+        ios-src="{{ .Get "iosSrc" }}"
+        ar
+        ar-modes="scene-viewer webxr quick-look"
+        ar-scale="auto"
+        environment-image="{{ .Get "environment-image" }}"
+        poster="{{ .Get "poster" }}"
+        shadow-intensity="{{ .Get "shadow-intensity" }}"
+        camera-controls
+        touch-action="{{ .Get "touch-action" }}"
+        generate-schema
+        auto-rotate
+      ></model-viewer>
+    </div>
+    {{ $caption := .Get "caption" | default (.Get "title") | default "" }}{{/* Support legacy `title` option. */}}
+    {{- if $caption -}}
+    <figcaption class="model-viewer"> 
+      {{ $caption | markdownify | emojify }}
+    </figcaption>
+    {{- end -}}
   </div>
 </div>
-
-{{ $caption := .Get "caption" | default (.Get "title") | default "" }}{{/* Support legacy `title` option. */}}
-{{- if $caption -}}
-<figcaption class="model-viewer"> 
-  {{ $caption | markdownify | emojify }}
-</figcaption>
-{{- end -}}

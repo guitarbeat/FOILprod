@@ -7,6 +7,7 @@ tags:
 - Particle Tracking
 - Multiphoton Microscopy
 - 2P
+- Computational Modeling
 
 weight: 9
 

@@ -9,6 +9,7 @@ tags:
 - Dynamic Light Scattering
 - LSCI
 - Multiphoton Microscopy
+- Computational Modeling
 
 weight: 6
 
